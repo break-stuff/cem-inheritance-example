@@ -1,0 +1,19 @@
+{
+  "name": "component-inheritance-demo",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "analyze": "cem analyze",
+    "build": "tsc && cem analyze"
+  },
+  "dependencies": {
+    "@shoelace-style/shoelace": "^2.13.1",
+    "lit": "^3.1.2"
+  },
+  "devDependencies": {
+    "@custom-elements-manifest/analyzer": "^0.9.0",
+    "custom-elements-manifest-inheritance": "^1.0.0",
+    "typescript": "^5.2.2"
+  }
+}

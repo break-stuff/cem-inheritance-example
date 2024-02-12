@@ -1,0 +1,2611 @@
+{
+  "schemaVersion": "1.0.0",
+  "readme": "",
+  "modules": [
+    {
+      "kind": "javascript-module",
+      "path": "src/components/my-ext-input.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "An element that extends the local input element that extends Shoelace's input element.",
+          "name": "MyExtInput",
+          "cssProperties": [
+            {
+              "description": "The border color",
+              "name": "--my-other-input-border-color"
+            },
+            {
+              "description": "The border color",
+              "name": "--my-input-border-color",
+              "inheritedFrom": {
+                "name": "MyInput"
+              }
+            }
+          ],
+          "members": [
+            {
+              "kind": "field",
+              "name": "variation",
+              "type": {
+                "text": "string"
+              },
+              "default": "'primary'",
+              "description": "Sets the style variation for the input",
+              "attribute": "variation"
+            },
+            {
+              "kind": "field",
+              "name": "docsHint",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"Click on the Vite and Lit logos to learn more\"",
+              "description": "Copy for the read the docs hint.",
+              "attribute": "docs-hint",
+              "inheritedFrom": {
+                "name": "MyInput",
+                "module": "src/components/my-input.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "count",
+              "type": {
+                "text": "number"
+              },
+              "default": "0",
+              "description": "The number of times the button has been clicked.",
+              "attribute": "count",
+              "inheritedFrom": {
+                "name": "MyInput",
+                "module": "src/components/my-input.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "dependencies",
+              "type": {
+                "text": "object"
+              },
+              "static": true,
+              "default": "{ 'sl-icon': SlIcon }",
+              "inheritedFrom": {
+                "name": "SlInput"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "input",
+              "type": {
+                "text": "HTMLInputElement"
+              },
+              "inheritedFrom": {
+                "name": "SlInput"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "title",
+              "type": {
+                "text": "string"
+              },
+              "default": "''",
+              "attribute": "title",
+              "inheritedFrom": {
+                "name": "SlInput"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "type",
+              "type": {
+                "text": "| 'date'\n    | 'datetime-local'\n    | 'email'\n    | 'number'\n    | 'password'\n    | 'search'\n    | 'tel'\n    | 'text'\n    | 'time'\n    | 'url'"
+              },
+              "default": "'text'",
+              "description": "The type of input. Works the same as a native `<input>` element, but only a subset of types are supported. Defaults\nto `text`.",
+              "attribute": "type",
+              "reflects": true,
+              "inheritedFrom": {
+                "name": "SlInput"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "name",
+              "type": {
+                "text": "string"
+              },
+              "default": "''",
+              "description": "The name of the input, submitted as a name/value pair with form data.",
+              "attribute": "name",
+              "inheritedFrom": {
+                "name": "SlInput"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "value",
+              "type": {
+                "text": "string"
+              },
+              "default": "''",
+              "description": "The current value of the input, submitted as a name/value pair with form data.",
+              "attribute": "value",
+              "inheritedFrom": {
+                "name": "SlInput"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "defaultValue",
+              "type": {
+                "text": "string"
+              },
+              "default": "''",
+              "description": "The default value of the form control. Primarily used for resetting the form control.",
+              "inheritedFrom": {
+                "name": "SlInput"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "size",
+              "type": {
+                "text": "'small' | 'medium' | 'large'"
+              },
+              "default": "'medium'",
+              "description": "The input's size.",
+              "attribute": "size",
+              "reflects": true,
+              "inheritedFrom": {
+                "name": "SlInput"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "filled",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "Draws a filled input.",
+              "attribute": "filled",
+              "reflects": true,
+              "inheritedFrom": {
+                "name": "SlInput"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "pill",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "Draws a pill-style input with rounded edges.",
+              "attribute": "pill",
+              "reflects": true,
+              "inheritedFrom": {
+                "name": "SlInput"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "label",
+              "type": {
+                "text": "string"
+              },
+              "default": "''",
+              "description": "The input's label. If you need to display HTML, use the `label` slot instead.",
+              "attribute": "label",
+              "inheritedFrom": {
+                "name": "SlInput"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "helpText",
+              "type": {
+                "text": "string"
+              },
+              "default": "''",
+              "description": "The input's help text. If you need to display HTML, use the `help-text` slot instead.",
+              "attribute": "help-text",
+              "inheritedFrom": {
+                "name": "SlInput"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "clearable",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "Adds a clear button when the input is not empty.",
+              "attribute": "clearable",
+              "inheritedFrom": {
+                "name": "SlInput"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "disabled",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "Disables the input.",
+              "attribute": "disabled",
+              "reflects": true,
+              "inheritedFrom": {
+                "name": "SlInput"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "placeholder",
+              "type": {
+                "text": "string"
+              },
+              "default": "''",
+              "description": "Placeholder text to show as a hint when the input is empty.",
+              "attribute": "placeholder",
+              "inheritedFrom": {
+                "name": "SlInput"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "readonly",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "Makes the input readonly.",
+              "attribute": "readonly",
+              "reflects": true,
+              "inheritedFrom": {
+                "name": "SlInput"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "passwordToggle",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "Adds a button to toggle the password's visibility. Only applies to password types.",
+              "attribute": "password-toggle",
+              "inheritedFrom": {
+                "name": "SlInput"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "passwordVisible",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "Determines whether or not the password is currently visible. Only applies to password input types.",
+              "attribute": "password-visible",
+              "inheritedFrom": {
+                "name": "SlInput"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "noSpinButtons",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "Hides the browser's built-in increment/decrement spin buttons for number inputs.",
+              "attribute": "no-spin-buttons",
+              "inheritedFrom": {
+                "name": "SlInput"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "form",
+              "type": {
+                "text": "string"
+              },
+              "default": "''",
+              "description": "By default, form controls are associated with the nearest containing `<form>` element. This attribute allows you\nto place the form control outside of a form and associate it with the form that has this `id`. The form must be in\nthe same document or shadow root for this to work.",
+              "attribute": "form",
+              "reflects": true,
+              "inheritedFrom": {
+                "name": "SlInput"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "required",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "Makes the input a required field.",
+              "attribute": "required",
+              "reflects": true,
+              "inheritedFrom": {
+                "name": "SlInput"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "pattern",
+              "type": {
+                "text": "string"
+              },
+              "description": "A regular expression pattern to validate input against.",
+              "attribute": "pattern",
+              "inheritedFrom": {
+                "name": "SlInput"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "minlength",
+              "type": {
+                "text": "number"
+              },
+              "description": "The minimum length of input that will be considered valid.",
+              "attribute": "minlength",
+              "inheritedFrom": {
+                "name": "SlInput"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "maxlength",
+              "type": {
+                "text": "number"
+              },
+              "description": "The maximum length of input that will be considered valid.",
+              "attribute": "maxlength",
+              "inheritedFrom": {
+                "name": "SlInput"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "min",
+              "type": {
+                "text": "number | string"
+              },
+              "description": "The input's minimum value. Only applies to date and number input types.",
+              "attribute": "min",
+              "inheritedFrom": {
+                "name": "SlInput"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "max",
+              "type": {
+                "text": "number | string"
+              },
+              "description": "The input's maximum value. Only applies to date and number input types.",
+              "attribute": "max",
+              "inheritedFrom": {
+                "name": "SlInput"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "step",
+              "type": {
+                "text": "number | 'any'"
+              },
+              "description": "Specifies the granularity that the value must adhere to, or the special value `any` which means no stepping is\nimplied, allowing any numeric value. Only applies to date and number input types.",
+              "attribute": "step",
+              "inheritedFrom": {
+                "name": "SlInput"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "autocapitalize",
+              "type": {
+                "text": "'off' | 'none' | 'on' | 'sentences' | 'words' | 'characters'"
+              },
+              "description": "Controls whether and how text input is automatically capitalized as it is entered by the user.",
+              "attribute": "autocapitalize",
+              "inheritedFrom": {
+                "name": "SlInput"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "autocorrect",
+              "type": {
+                "text": "'off' | 'on'"
+              },
+              "description": "Indicates whether the browser's autocorrect feature is on or off.",
+              "attribute": "autocorrect",
+              "inheritedFrom": {
+                "name": "SlInput"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "autocomplete",
+              "type": {
+                "text": "string"
+              },
+              "description": "Specifies what permission the browser has to provide assistance in filling out form field values. Refer to\n[this page on MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/autocomplete) for available values.",
+              "attribute": "autocomplete",
+              "inheritedFrom": {
+                "name": "SlInput"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "autofocus",
+              "type": {
+                "text": "boolean"
+              },
+              "description": "Indicates that the input should receive focus on page load.",
+              "attribute": "autofocus",
+              "inheritedFrom": {
+                "name": "SlInput"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "enterkeyhint",
+              "type": {
+                "text": "'enter' | 'done' | 'go' | 'next' | 'previous' | 'search' | 'send'"
+              },
+              "description": "Used to customize the label or icon of the Enter key on virtual keyboards.",
+              "attribute": "enterkeyhint",
+              "inheritedFrom": {
+                "name": "SlInput"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "spellcheck",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "true",
+              "description": "Enables spell checking on the input.",
+              "attribute": "spellcheck",
+              "inheritedFrom": {
+                "name": "SlInput"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "inputmode",
+              "type": {
+                "text": "'none' | 'text' | 'decimal' | 'numeric' | 'tel' | 'search' | 'email' | 'url'"
+              },
+              "description": "Tells the browser what type of data will be entered by the user, allowing it to display the appropriate virtual\nkeyboard on supportive devices.",
+              "attribute": "inputmode",
+              "inheritedFrom": {
+                "name": "SlInput"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "valueAsDate",
+              "description": "Gets or sets the current value as a `Date` object. Returns `null` if the value can't be converted. This will use the native `<input type=\"{{type}}\">` implementation and may result in an error.",
+              "inheritedFrom": {
+                "name": "SlInput"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "valueAsNumber",
+              "description": "Gets or sets the current value as a number. Returns `NaN` if the value can't be converted.",
+              "inheritedFrom": {
+                "name": "SlInput"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "validity",
+              "description": "Gets the validity state object",
+              "readonly": true,
+              "inheritedFrom": {
+                "name": "SlInput"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "validationMessage",
+              "description": "Gets the validation message",
+              "readonly": true,
+              "inheritedFrom": {
+                "name": "SlInput"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "handleDisabledChange",
+              "inheritedFrom": {
+                "name": "SlInput"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "handleStepChange",
+              "inheritedFrom": {
+                "name": "SlInput"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "handleValueChange",
+              "inheritedFrom": {
+                "name": "SlInput"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "focus",
+              "parameters": [
+                {
+                  "name": "options",
+                  "optional": true,
+                  "type": {
+                    "text": "FocusOptions"
+                  }
+                }
+              ],
+              "description": "Sets focus on the input.",
+              "inheritedFrom": {
+                "name": "SlInput"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "blur",
+              "description": "Removes focus from the input.",
+              "inheritedFrom": {
+                "name": "SlInput"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "select",
+              "description": "Selects all the text in the input.",
+              "inheritedFrom": {
+                "name": "SlInput"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "setSelectionRange",
+              "parameters": [
+                {
+                  "name": "selectionStart",
+                  "type": {
+                    "text": "number"
+                  }
+                },
+                {
+                  "name": "selectionEnd",
+                  "type": {
+                    "text": "number"
+                  }
+                },
+                {
+                  "name": "selectionDirection",
+                  "default": "'none'",
+                  "type": {
+                    "text": "'forward' | 'backward' | 'none'"
+                  }
+                }
+              ],
+              "description": "Sets the start and end positions of the text selection (0-based).",
+              "inheritedFrom": {
+                "name": "SlInput"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "setRangeText",
+              "parameters": [
+                {
+                  "name": "replacement",
+                  "type": {
+                    "text": "string"
+                  }
+                },
+                {
+                  "name": "start",
+                  "optional": true,
+                  "type": {
+                    "text": "number"
+                  }
+                },
+                {
+                  "name": "end",
+                  "optional": true,
+                  "type": {
+                    "text": "number"
+                  }
+                },
+                {
+                  "name": "selectMode",
+                  "default": "'preserve'",
+                  "type": {
+                    "text": "'select' | 'start' | 'end' | 'preserve'"
+                  }
+                }
+              ],
+              "description": "Replaces a range of text with a new string.",
+              "inheritedFrom": {
+                "name": "SlInput"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "showPicker",
+              "description": "Displays the browser picker for an input element (only works if the browser supports it for the input type).",
+              "inheritedFrom": {
+                "name": "SlInput"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "stepUp",
+              "description": "Increments the value of a numeric input type by the value of the step attribute.",
+              "inheritedFrom": {
+                "name": "SlInput"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "stepDown",
+              "description": "Decrements the value of a numeric input type by the value of the step attribute.",
+              "inheritedFrom": {
+                "name": "SlInput"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "checkValidity",
+              "description": "Checks for validity but does not show a validation message. Returns `true` when valid and `false` when invalid.",
+              "inheritedFrom": {
+                "name": "SlInput"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "getForm",
+              "return": {
+                "type": {
+                  "text": "HTMLFormElement | null"
+                }
+              },
+              "description": "Gets the associated form, if one exists.",
+              "inheritedFrom": {
+                "name": "SlInput"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "reportValidity",
+              "description": "Checks for validity and shows the browser's validation message if the control is invalid.",
+              "inheritedFrom": {
+                "name": "SlInput"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "setCustomValidity",
+              "parameters": [
+                {
+                  "name": "message",
+                  "type": {
+                    "text": "string"
+                  }
+                }
+              ],
+              "description": "Sets a custom validation message. Pass an empty string to restore validity.",
+              "inheritedFrom": {
+                "name": "SlInput"
+              }
+            }
+          ],
+          "attributes": [
+            {
+              "name": "variation",
+              "type": {
+                "text": "string"
+              },
+              "default": "'primary'",
+              "description": "Sets the style variation for the input",
+              "fieldName": "variation"
+            },
+            {
+              "name": "docs-hint",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"Click on the Vite and Lit logos to learn more\"",
+              "description": "Copy for the read the docs hint.",
+              "fieldName": "docsHint",
+              "inheritedFrom": {
+                "name": "MyInput",
+                "module": "src/components/my-input.ts"
+              }
+            },
+            {
+              "name": "count",
+              "type": {
+                "text": "number"
+              },
+              "default": "0",
+              "description": "The number of times the button has been clicked.",
+              "fieldName": "count",
+              "inheritedFrom": {
+                "name": "MyInput",
+                "module": "src/components/my-input.ts"
+              }
+            },
+            {
+              "name": "title",
+              "type": {
+                "text": "string"
+              },
+              "default": "''",
+              "fieldName": "title",
+              "inheritedFrom": {
+                "name": "SlInput"
+              }
+            },
+            {
+              "name": "type",
+              "type": {
+                "text": "| 'date'\n    | 'datetime-local'\n    | 'email'\n    | 'number'\n    | 'password'\n    | 'search'\n    | 'tel'\n    | 'text'\n    | 'time'\n    | 'url'"
+              },
+              "default": "'text'",
+              "description": "The type of input. Works the same as a native `<input>` element, but only a subset of types are supported. Defaults\nto `text`.",
+              "fieldName": "type",
+              "inheritedFrom": {
+                "name": "SlInput"
+              }
+            },
+            {
+              "name": "name",
+              "type": {
+                "text": "string"
+              },
+              "default": "''",
+              "description": "The name of the input, submitted as a name/value pair with form data.",
+              "fieldName": "name",
+              "inheritedFrom": {
+                "name": "SlInput"
+              }
+            },
+            {
+              "name": "value",
+              "type": {
+                "text": "string"
+              },
+              "default": "''",
+              "description": "The current value of the input, submitted as a name/value pair with form data.",
+              "fieldName": "value",
+              "inheritedFrom": {
+                "name": "SlInput"
+              }
+            },
+            {
+              "name": "size",
+              "type": {
+                "text": "'small' | 'medium' | 'large'"
+              },
+              "default": "'medium'",
+              "description": "The input's size.",
+              "fieldName": "size",
+              "inheritedFrom": {
+                "name": "SlInput"
+              }
+            },
+            {
+              "name": "filled",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "Draws a filled input.",
+              "fieldName": "filled",
+              "inheritedFrom": {
+                "name": "SlInput"
+              }
+            },
+            {
+              "name": "pill",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "Draws a pill-style input with rounded edges.",
+              "fieldName": "pill",
+              "inheritedFrom": {
+                "name": "SlInput"
+              }
+            },
+            {
+              "name": "label",
+              "type": {
+                "text": "string"
+              },
+              "default": "''",
+              "description": "The input's label. If you need to display HTML, use the `label` slot instead.",
+              "fieldName": "label",
+              "inheritedFrom": {
+                "name": "SlInput"
+              }
+            },
+            {
+              "name": "help-text",
+              "type": {
+                "text": "string"
+              },
+              "default": "''",
+              "description": "The input's help text. If you need to display HTML, use the `help-text` slot instead.",
+              "fieldName": "helpText",
+              "inheritedFrom": {
+                "name": "SlInput"
+              }
+            },
+            {
+              "name": "clearable",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "Adds a clear button when the input is not empty.",
+              "fieldName": "clearable",
+              "inheritedFrom": {
+                "name": "SlInput"
+              }
+            },
+            {
+              "name": "disabled",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "Disables the input.",
+              "fieldName": "disabled",
+              "inheritedFrom": {
+                "name": "SlInput"
+              }
+            },
+            {
+              "name": "placeholder",
+              "type": {
+                "text": "string"
+              },
+              "default": "''",
+              "description": "Placeholder text to show as a hint when the input is empty.",
+              "fieldName": "placeholder",
+              "inheritedFrom": {
+                "name": "SlInput"
+              }
+            },
+            {
+              "name": "readonly",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "Makes the input readonly.",
+              "fieldName": "readonly",
+              "inheritedFrom": {
+                "name": "SlInput"
+              }
+            },
+            {
+              "name": "password-toggle",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "Adds a button to toggle the password's visibility. Only applies to password types.",
+              "fieldName": "passwordToggle",
+              "inheritedFrom": {
+                "name": "SlInput"
+              }
+            },
+            {
+              "name": "password-visible",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "Determines whether or not the password is currently visible. Only applies to password input types.",
+              "fieldName": "passwordVisible",
+              "inheritedFrom": {
+                "name": "SlInput"
+              }
+            },
+            {
+              "name": "no-spin-buttons",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "Hides the browser's built-in increment/decrement spin buttons for number inputs.",
+              "fieldName": "noSpinButtons",
+              "inheritedFrom": {
+                "name": "SlInput"
+              }
+            },
+            {
+              "name": "form",
+              "type": {
+                "text": "string"
+              },
+              "default": "''",
+              "description": "By default, form controls are associated with the nearest containing `<form>` element. This attribute allows you\nto place the form control outside of a form and associate it with the form that has this `id`. The form must be in\nthe same document or shadow root for this to work.",
+              "fieldName": "form",
+              "inheritedFrom": {
+                "name": "SlInput"
+              }
+            },
+            {
+              "name": "required",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "Makes the input a required field.",
+              "fieldName": "required",
+              "inheritedFrom": {
+                "name": "SlInput"
+              }
+            },
+            {
+              "name": "pattern",
+              "type": {
+                "text": "string"
+              },
+              "description": "A regular expression pattern to validate input against.",
+              "fieldName": "pattern",
+              "inheritedFrom": {
+                "name": "SlInput"
+              }
+            },
+            {
+              "name": "minlength",
+              "type": {
+                "text": "number"
+              },
+              "description": "The minimum length of input that will be considered valid.",
+              "fieldName": "minlength",
+              "inheritedFrom": {
+                "name": "SlInput"
+              }
+            },
+            {
+              "name": "maxlength",
+              "type": {
+                "text": "number"
+              },
+              "description": "The maximum length of input that will be considered valid.",
+              "fieldName": "maxlength",
+              "inheritedFrom": {
+                "name": "SlInput"
+              }
+            },
+            {
+              "name": "min",
+              "type": {
+                "text": "number | string"
+              },
+              "description": "The input's minimum value. Only applies to date and number input types.",
+              "fieldName": "min",
+              "inheritedFrom": {
+                "name": "SlInput"
+              }
+            },
+            {
+              "name": "max",
+              "type": {
+                "text": "number | string"
+              },
+              "description": "The input's maximum value. Only applies to date and number input types.",
+              "fieldName": "max",
+              "inheritedFrom": {
+                "name": "SlInput"
+              }
+            },
+            {
+              "name": "step",
+              "type": {
+                "text": "number | 'any'"
+              },
+              "description": "Specifies the granularity that the value must adhere to, or the special value `any` which means no stepping is\nimplied, allowing any numeric value. Only applies to date and number input types.",
+              "fieldName": "step",
+              "inheritedFrom": {
+                "name": "SlInput"
+              }
+            },
+            {
+              "name": "autocapitalize",
+              "type": {
+                "text": "'off' | 'none' | 'on' | 'sentences' | 'words' | 'characters'"
+              },
+              "description": "Controls whether and how text input is automatically capitalized as it is entered by the user.",
+              "fieldName": "autocapitalize",
+              "inheritedFrom": {
+                "name": "SlInput"
+              }
+            },
+            {
+              "name": "autocorrect",
+              "type": {
+                "text": "'off' | 'on'"
+              },
+              "description": "Indicates whether the browser's autocorrect feature is on or off.",
+              "fieldName": "autocorrect",
+              "inheritedFrom": {
+                "name": "SlInput"
+              }
+            },
+            {
+              "name": "autocomplete",
+              "type": {
+                "text": "string"
+              },
+              "description": "Specifies what permission the browser has to provide assistance in filling out form field values. Refer to\n[this page on MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/autocomplete) for available values.",
+              "fieldName": "autocomplete",
+              "inheritedFrom": {
+                "name": "SlInput"
+              }
+            },
+            {
+              "name": "autofocus",
+              "type": {
+                "text": "boolean"
+              },
+              "description": "Indicates that the input should receive focus on page load.",
+              "fieldName": "autofocus",
+              "inheritedFrom": {
+                "name": "SlInput"
+              }
+            },
+            {
+              "name": "enterkeyhint",
+              "type": {
+                "text": "'enter' | 'done' | 'go' | 'next' | 'previous' | 'search' | 'send'"
+              },
+              "description": "Used to customize the label or icon of the Enter key on virtual keyboards.",
+              "fieldName": "enterkeyhint",
+              "inheritedFrom": {
+                "name": "SlInput"
+              }
+            },
+            {
+              "name": "spellcheck",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "true",
+              "description": "Enables spell checking on the input.",
+              "fieldName": "spellcheck",
+              "inheritedFrom": {
+                "name": "SlInput"
+              }
+            },
+            {
+              "name": "inputmode",
+              "type": {
+                "text": "'none' | 'text' | 'decimal' | 'numeric' | 'tel' | 'search' | 'email' | 'url'"
+              },
+              "description": "Tells the browser what type of data will be entered by the user, allowing it to display the appropriate virtual\nkeyboard on supportive devices.",
+              "fieldName": "inputmode",
+              "inheritedFrom": {
+                "name": "SlInput"
+              }
+            }
+          ],
+          "superclass": {
+            "name": "MyInput",
+            "module": "/src/components/my-input.ts"
+          },
+          "tagName": "my-ext-input",
+          "customElement": true,
+          "cssParts": [
+            {
+              "description": "The input element",
+              "name": "my-input",
+              "inheritedFrom": {
+                "name": "MyInput"
+              }
+            },
+            {
+              "description": "The form control that wraps the label, input, and help text.",
+              "name": "form-control",
+              "inheritedFrom": {
+                "name": "SlInput"
+              }
+            },
+            {
+              "description": "The label's wrapper.",
+              "name": "form-control-label",
+              "inheritedFrom": {
+                "name": "SlInput"
+              }
+            },
+            {
+              "description": "The input's wrapper.",
+              "name": "form-control-input",
+              "inheritedFrom": {
+                "name": "SlInput"
+              }
+            },
+            {
+              "description": "The help text's wrapper.",
+              "name": "form-control-help-text",
+              "inheritedFrom": {
+                "name": "SlInput"
+              }
+            },
+            {
+              "description": "The component's base wrapper.",
+              "name": "base",
+              "inheritedFrom": {
+                "name": "SlInput"
+              }
+            },
+            {
+              "description": "The internal `<input>` control.",
+              "name": "input",
+              "inheritedFrom": {
+                "name": "SlInput"
+              }
+            },
+            {
+              "description": "The container that wraps the prefix.",
+              "name": "prefix",
+              "inheritedFrom": {
+                "name": "SlInput"
+              }
+            },
+            {
+              "description": "The clear button.",
+              "name": "clear-button",
+              "inheritedFrom": {
+                "name": "SlInput"
+              }
+            },
+            {
+              "description": "The password toggle button.",
+              "name": "password-toggle-button",
+              "inheritedFrom": {
+                "name": "SlInput"
+              }
+            },
+            {
+              "description": "The container that wraps the suffix.",
+              "name": "suffix",
+              "inheritedFrom": {
+                "name": "SlInput"
+              }
+            }
+          ],
+          "events": [
+            {
+              "description": "Emitted when the control loses focus.",
+              "name": "sl-blur",
+              "reactName": "onSlBlur",
+              "eventName": "SlBlurEvent",
+              "inheritedFrom": {
+                "name": "SlInput"
+              }
+            },
+            {
+              "description": "Emitted when an alteration to the control's value is committed by the user.",
+              "name": "sl-change",
+              "reactName": "onSlChange",
+              "eventName": "SlChangeEvent",
+              "inheritedFrom": {
+                "name": "SlInput"
+              }
+            },
+            {
+              "description": "Emitted when the clear button is activated.",
+              "name": "sl-clear",
+              "reactName": "onSlClear",
+              "eventName": "SlClearEvent",
+              "inheritedFrom": {
+                "name": "SlInput"
+              }
+            },
+            {
+              "description": "Emitted when the control gains focus.",
+              "name": "sl-focus",
+              "reactName": "onSlFocus",
+              "eventName": "SlFocusEvent",
+              "inheritedFrom": {
+                "name": "SlInput"
+              }
+            },
+            {
+              "description": "Emitted when the control receives input.",
+              "name": "sl-input",
+              "reactName": "onSlInput",
+              "eventName": "SlInputEvent",
+              "inheritedFrom": {
+                "name": "SlInput"
+              }
+            },
+            {
+              "description": "Emitted when the form control has been checked for validity and its constraints aren't satisfied.",
+              "name": "sl-invalid",
+              "reactName": "onSlInvalid",
+              "eventName": "SlInvalidEvent",
+              "inheritedFrom": {
+                "name": "SlInput"
+              }
+            }
+          ],
+          "slots": [
+            {
+              "description": "The input's label. Alternatively, you can use the `label` attribute.",
+              "name": "label",
+              "inheritedFrom": {
+                "name": "SlInput"
+              }
+            },
+            {
+              "description": "Used to prepend a presentational icon or similar element to the input.",
+              "name": "prefix",
+              "inheritedFrom": {
+                "name": "SlInput"
+              }
+            },
+            {
+              "description": "Used to append a presentational icon or similar element to the input.",
+              "name": "suffix",
+              "inheritedFrom": {
+                "name": "SlInput"
+              }
+            },
+            {
+              "description": "An icon to use in lieu of the default clear icon.",
+              "name": "clear-icon",
+              "inheritedFrom": {
+                "name": "SlInput"
+              }
+            },
+            {
+              "description": "An icon to use in lieu of the default show password icon.",
+              "name": "show-password-icon",
+              "inheritedFrom": {
+                "name": "SlInput"
+              }
+            },
+            {
+              "description": "An icon to use in lieu of the default hide password icon.",
+              "name": "hide-password-icon",
+              "inheritedFrom": {
+                "name": "SlInput"
+              }
+            },
+            {
+              "description": "Text that describes how to use the input. Alternatively, you can use the `help-text` attribute.",
+              "name": "help-text",
+              "inheritedFrom": {
+                "name": "SlInput"
+              }
+            }
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "MyExtInput",
+          "declaration": {
+            "name": "MyExtInput",
+            "module": "src/components/my-ext-input.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "my-ext-input",
+          "declaration": {
+            "name": "MyExtInput",
+            "module": "src/components/my-ext-input.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/my-input.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "An element that extends Shoelace's input element.",
+          "name": "MyInput",
+          "cssProperties": [
+            {
+              "description": "The border color",
+              "name": "--my-input-border-color"
+            }
+          ],
+          "cssParts": [
+            {
+              "description": "The input element",
+              "name": "my-input"
+            },
+            {
+              "description": "The form control that wraps the label, input, and help text.",
+              "name": "form-control",
+              "inheritedFrom": {
+                "name": "SlInput"
+              }
+            },
+            {
+              "description": "The label's wrapper.",
+              "name": "form-control-label",
+              "inheritedFrom": {
+                "name": "SlInput"
+              }
+            },
+            {
+              "description": "The input's wrapper.",
+              "name": "form-control-input",
+              "inheritedFrom": {
+                "name": "SlInput"
+              }
+            },
+            {
+              "description": "The help text's wrapper.",
+              "name": "form-control-help-text",
+              "inheritedFrom": {
+                "name": "SlInput"
+              }
+            },
+            {
+              "description": "The component's base wrapper.",
+              "name": "base",
+              "inheritedFrom": {
+                "name": "SlInput"
+              }
+            },
+            {
+              "description": "The internal `<input>` control.",
+              "name": "input",
+              "inheritedFrom": {
+                "name": "SlInput"
+              }
+            },
+            {
+              "description": "The container that wraps the prefix.",
+              "name": "prefix",
+              "inheritedFrom": {
+                "name": "SlInput"
+              }
+            },
+            {
+              "description": "The clear button.",
+              "name": "clear-button",
+              "inheritedFrom": {
+                "name": "SlInput"
+              }
+            },
+            {
+              "description": "The password toggle button.",
+              "name": "password-toggle-button",
+              "inheritedFrom": {
+                "name": "SlInput"
+              }
+            },
+            {
+              "description": "The container that wraps the suffix.",
+              "name": "suffix",
+              "inheritedFrom": {
+                "name": "SlInput"
+              }
+            }
+          ],
+          "members": [
+            {
+              "kind": "field",
+              "name": "docsHint",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"Click on the Vite and Lit logos to learn more\"",
+              "description": "Copy for the read the docs hint.",
+              "attribute": "docs-hint"
+            },
+            {
+              "kind": "field",
+              "name": "count",
+              "type": {
+                "text": "number"
+              },
+              "default": "0",
+              "description": "The number of times the button has been clicked.",
+              "attribute": "count"
+            },
+            {
+              "kind": "field",
+              "name": "dependencies",
+              "type": {
+                "text": "object"
+              },
+              "static": true,
+              "default": "{ 'sl-icon': SlIcon }",
+              "inheritedFrom": {
+                "name": "SlInput"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "input",
+              "type": {
+                "text": "HTMLInputElement"
+              },
+              "inheritedFrom": {
+                "name": "SlInput"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "title",
+              "type": {
+                "text": "string"
+              },
+              "default": "''",
+              "attribute": "title",
+              "inheritedFrom": {
+                "name": "SlInput"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "type",
+              "type": {
+                "text": "| 'date'\n    | 'datetime-local'\n    | 'email'\n    | 'number'\n    | 'password'\n    | 'search'\n    | 'tel'\n    | 'text'\n    | 'time'\n    | 'url'"
+              },
+              "default": "'text'",
+              "description": "The type of input. Works the same as a native `<input>` element, but only a subset of types are supported. Defaults\nto `text`.",
+              "attribute": "type",
+              "reflects": true,
+              "inheritedFrom": {
+                "name": "SlInput"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "name",
+              "type": {
+                "text": "string"
+              },
+              "default": "''",
+              "description": "The name of the input, submitted as a name/value pair with form data.",
+              "attribute": "name",
+              "inheritedFrom": {
+                "name": "SlInput"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "value",
+              "type": {
+                "text": "string"
+              },
+              "default": "''",
+              "description": "The current value of the input, submitted as a name/value pair with form data.",
+              "attribute": "value",
+              "inheritedFrom": {
+                "name": "SlInput"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "defaultValue",
+              "type": {
+                "text": "string"
+              },
+              "default": "''",
+              "description": "The default value of the form control. Primarily used for resetting the form control.",
+              "inheritedFrom": {
+                "name": "SlInput"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "size",
+              "type": {
+                "text": "'small' | 'medium' | 'large'"
+              },
+              "default": "'medium'",
+              "description": "The input's size.",
+              "attribute": "size",
+              "reflects": true,
+              "inheritedFrom": {
+                "name": "SlInput"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "filled",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "Draws a filled input.",
+              "attribute": "filled",
+              "reflects": true,
+              "inheritedFrom": {
+                "name": "SlInput"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "pill",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "Draws a pill-style input with rounded edges.",
+              "attribute": "pill",
+              "reflects": true,
+              "inheritedFrom": {
+                "name": "SlInput"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "label",
+              "type": {
+                "text": "string"
+              },
+              "default": "''",
+              "description": "The input's label. If you need to display HTML, use the `label` slot instead.",
+              "attribute": "label",
+              "inheritedFrom": {
+                "name": "SlInput"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "helpText",
+              "type": {
+                "text": "string"
+              },
+              "default": "''",
+              "description": "The input's help text. If you need to display HTML, use the `help-text` slot instead.",
+              "attribute": "help-text",
+              "inheritedFrom": {
+                "name": "SlInput"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "clearable",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "Adds a clear button when the input is not empty.",
+              "attribute": "clearable",
+              "inheritedFrom": {
+                "name": "SlInput"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "disabled",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "Disables the input.",
+              "attribute": "disabled",
+              "reflects": true,
+              "inheritedFrom": {
+                "name": "SlInput"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "placeholder",
+              "type": {
+                "text": "string"
+              },
+              "default": "''",
+              "description": "Placeholder text to show as a hint when the input is empty.",
+              "attribute": "placeholder",
+              "inheritedFrom": {
+                "name": "SlInput"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "readonly",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "Makes the input readonly.",
+              "attribute": "readonly",
+              "reflects": true,
+              "inheritedFrom": {
+                "name": "SlInput"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "passwordToggle",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "Adds a button to toggle the password's visibility. Only applies to password types.",
+              "attribute": "password-toggle",
+              "inheritedFrom": {
+                "name": "SlInput"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "passwordVisible",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "Determines whether or not the password is currently visible. Only applies to password input types.",
+              "attribute": "password-visible",
+              "inheritedFrom": {
+                "name": "SlInput"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "noSpinButtons",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "Hides the browser's built-in increment/decrement spin buttons for number inputs.",
+              "attribute": "no-spin-buttons",
+              "inheritedFrom": {
+                "name": "SlInput"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "form",
+              "type": {
+                "text": "string"
+              },
+              "default": "''",
+              "description": "By default, form controls are associated with the nearest containing `<form>` element. This attribute allows you\nto place the form control outside of a form and associate it with the form that has this `id`. The form must be in\nthe same document or shadow root for this to work.",
+              "attribute": "form",
+              "reflects": true,
+              "inheritedFrom": {
+                "name": "SlInput"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "required",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "Makes the input a required field.",
+              "attribute": "required",
+              "reflects": true,
+              "inheritedFrom": {
+                "name": "SlInput"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "pattern",
+              "type": {
+                "text": "string"
+              },
+              "description": "A regular expression pattern to validate input against.",
+              "attribute": "pattern",
+              "inheritedFrom": {
+                "name": "SlInput"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "minlength",
+              "type": {
+                "text": "number"
+              },
+              "description": "The minimum length of input that will be considered valid.",
+              "attribute": "minlength",
+              "inheritedFrom": {
+                "name": "SlInput"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "maxlength",
+              "type": {
+                "text": "number"
+              },
+              "description": "The maximum length of input that will be considered valid.",
+              "attribute": "maxlength",
+              "inheritedFrom": {
+                "name": "SlInput"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "min",
+              "type": {
+                "text": "number | string"
+              },
+              "description": "The input's minimum value. Only applies to date and number input types.",
+              "attribute": "min",
+              "inheritedFrom": {
+                "name": "SlInput"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "max",
+              "type": {
+                "text": "number | string"
+              },
+              "description": "The input's maximum value. Only applies to date and number input types.",
+              "attribute": "max",
+              "inheritedFrom": {
+                "name": "SlInput"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "step",
+              "type": {
+                "text": "number | 'any'"
+              },
+              "description": "Specifies the granularity that the value must adhere to, or the special value `any` which means no stepping is\nimplied, allowing any numeric value. Only applies to date and number input types.",
+              "attribute": "step",
+              "inheritedFrom": {
+                "name": "SlInput"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "autocapitalize",
+              "type": {
+                "text": "'off' | 'none' | 'on' | 'sentences' | 'words' | 'characters'"
+              },
+              "description": "Controls whether and how text input is automatically capitalized as it is entered by the user.",
+              "attribute": "autocapitalize",
+              "inheritedFrom": {
+                "name": "SlInput"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "autocorrect",
+              "type": {
+                "text": "'off' | 'on'"
+              },
+              "description": "Indicates whether the browser's autocorrect feature is on or off.",
+              "attribute": "autocorrect",
+              "inheritedFrom": {
+                "name": "SlInput"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "autocomplete",
+              "type": {
+                "text": "string"
+              },
+              "description": "Specifies what permission the browser has to provide assistance in filling out form field values. Refer to\n[this page on MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/autocomplete) for available values.",
+              "attribute": "autocomplete",
+              "inheritedFrom": {
+                "name": "SlInput"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "autofocus",
+              "type": {
+                "text": "boolean"
+              },
+              "description": "Indicates that the input should receive focus on page load.",
+              "attribute": "autofocus",
+              "inheritedFrom": {
+                "name": "SlInput"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "enterkeyhint",
+              "type": {
+                "text": "'enter' | 'done' | 'go' | 'next' | 'previous' | 'search' | 'send'"
+              },
+              "description": "Used to customize the label or icon of the Enter key on virtual keyboards.",
+              "attribute": "enterkeyhint",
+              "inheritedFrom": {
+                "name": "SlInput"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "spellcheck",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "true",
+              "description": "Enables spell checking on the input.",
+              "attribute": "spellcheck",
+              "inheritedFrom": {
+                "name": "SlInput"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "inputmode",
+              "type": {
+                "text": "'none' | 'text' | 'decimal' | 'numeric' | 'tel' | 'search' | 'email' | 'url'"
+              },
+              "description": "Tells the browser what type of data will be entered by the user, allowing it to display the appropriate virtual\nkeyboard on supportive devices.",
+              "attribute": "inputmode",
+              "inheritedFrom": {
+                "name": "SlInput"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "valueAsDate",
+              "description": "Gets or sets the current value as a `Date` object. Returns `null` if the value can't be converted. This will use the native `<input type=\"{{type}}\">` implementation and may result in an error.",
+              "inheritedFrom": {
+                "name": "SlInput"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "valueAsNumber",
+              "description": "Gets or sets the current value as a number. Returns `NaN` if the value can't be converted.",
+              "inheritedFrom": {
+                "name": "SlInput"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "validity",
+              "description": "Gets the validity state object",
+              "readonly": true,
+              "inheritedFrom": {
+                "name": "SlInput"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "validationMessage",
+              "description": "Gets the validation message",
+              "readonly": true,
+              "inheritedFrom": {
+                "name": "SlInput"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "handleDisabledChange",
+              "inheritedFrom": {
+                "name": "SlInput"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "handleStepChange",
+              "inheritedFrom": {
+                "name": "SlInput"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "handleValueChange",
+              "inheritedFrom": {
+                "name": "SlInput"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "focus",
+              "parameters": [
+                {
+                  "name": "options",
+                  "optional": true,
+                  "type": {
+                    "text": "FocusOptions"
+                  }
+                }
+              ],
+              "description": "Sets focus on the input.",
+              "inheritedFrom": {
+                "name": "SlInput"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "blur",
+              "description": "Removes focus from the input.",
+              "inheritedFrom": {
+                "name": "SlInput"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "select",
+              "description": "Selects all the text in the input.",
+              "inheritedFrom": {
+                "name": "SlInput"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "setSelectionRange",
+              "parameters": [
+                {
+                  "name": "selectionStart",
+                  "type": {
+                    "text": "number"
+                  }
+                },
+                {
+                  "name": "selectionEnd",
+                  "type": {
+                    "text": "number"
+                  }
+                },
+                {
+                  "name": "selectionDirection",
+                  "default": "'none'",
+                  "type": {
+                    "text": "'forward' | 'backward' | 'none'"
+                  }
+                }
+              ],
+              "description": "Sets the start and end positions of the text selection (0-based).",
+              "inheritedFrom": {
+                "name": "SlInput"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "setRangeText",
+              "parameters": [
+                {
+                  "name": "replacement",
+                  "type": {
+                    "text": "string"
+                  }
+                },
+                {
+                  "name": "start",
+                  "optional": true,
+                  "type": {
+                    "text": "number"
+                  }
+                },
+                {
+                  "name": "end",
+                  "optional": true,
+                  "type": {
+                    "text": "number"
+                  }
+                },
+                {
+                  "name": "selectMode",
+                  "default": "'preserve'",
+                  "type": {
+                    "text": "'select' | 'start' | 'end' | 'preserve'"
+                  }
+                }
+              ],
+              "description": "Replaces a range of text with a new string.",
+              "inheritedFrom": {
+                "name": "SlInput"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "showPicker",
+              "description": "Displays the browser picker for an input element (only works if the browser supports it for the input type).",
+              "inheritedFrom": {
+                "name": "SlInput"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "stepUp",
+              "description": "Increments the value of a numeric input type by the value of the step attribute.",
+              "inheritedFrom": {
+                "name": "SlInput"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "stepDown",
+              "description": "Decrements the value of a numeric input type by the value of the step attribute.",
+              "inheritedFrom": {
+                "name": "SlInput"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "checkValidity",
+              "description": "Checks for validity but does not show a validation message. Returns `true` when valid and `false` when invalid.",
+              "inheritedFrom": {
+                "name": "SlInput"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "getForm",
+              "return": {
+                "type": {
+                  "text": "HTMLFormElement | null"
+                }
+              },
+              "description": "Gets the associated form, if one exists.",
+              "inheritedFrom": {
+                "name": "SlInput"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "reportValidity",
+              "description": "Checks for validity and shows the browser's validation message if the control is invalid.",
+              "inheritedFrom": {
+                "name": "SlInput"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "setCustomValidity",
+              "parameters": [
+                {
+                  "name": "message",
+                  "type": {
+                    "text": "string"
+                  }
+                }
+              ],
+              "description": "Sets a custom validation message. Pass an empty string to restore validity.",
+              "inheritedFrom": {
+                "name": "SlInput"
+              }
+            }
+          ],
+          "attributes": [
+            {
+              "name": "docs-hint",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"Click on the Vite and Lit logos to learn more\"",
+              "description": "Copy for the read the docs hint.",
+              "fieldName": "docsHint"
+            },
+            {
+              "name": "count",
+              "type": {
+                "text": "number"
+              },
+              "default": "0",
+              "description": "The number of times the button has been clicked.",
+              "fieldName": "count"
+            },
+            {
+              "name": "title",
+              "type": {
+                "text": "string"
+              },
+              "default": "''",
+              "fieldName": "title",
+              "inheritedFrom": {
+                "name": "SlInput"
+              }
+            },
+            {
+              "name": "type",
+              "type": {
+                "text": "| 'date'\n    | 'datetime-local'\n    | 'email'\n    | 'number'\n    | 'password'\n    | 'search'\n    | 'tel'\n    | 'text'\n    | 'time'\n    | 'url'"
+              },
+              "default": "'text'",
+              "description": "The type of input. Works the same as a native `<input>` element, but only a subset of types are supported. Defaults\nto `text`.",
+              "fieldName": "type",
+              "inheritedFrom": {
+                "name": "SlInput"
+              }
+            },
+            {
+              "name": "name",
+              "type": {
+                "text": "string"
+              },
+              "default": "''",
+              "description": "The name of the input, submitted as a name/value pair with form data.",
+              "fieldName": "name",
+              "inheritedFrom": {
+                "name": "SlInput"
+              }
+            },
+            {
+              "name": "value",
+              "type": {
+                "text": "string"
+              },
+              "default": "''",
+              "description": "The current value of the input, submitted as a name/value pair with form data.",
+              "fieldName": "value",
+              "inheritedFrom": {
+                "name": "SlInput"
+              }
+            },
+            {
+              "name": "size",
+              "type": {
+                "text": "'small' | 'medium' | 'large'"
+              },
+              "default": "'medium'",
+              "description": "The input's size.",
+              "fieldName": "size",
+              "inheritedFrom": {
+                "name": "SlInput"
+              }
+            },
+            {
+              "name": "filled",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "Draws a filled input.",
+              "fieldName": "filled",
+              "inheritedFrom": {
+                "name": "SlInput"
+              }
+            },
+            {
+              "name": "pill",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "Draws a pill-style input with rounded edges.",
+              "fieldName": "pill",
+              "inheritedFrom": {
+                "name": "SlInput"
+              }
+            },
+            {
+              "name": "label",
+              "type": {
+                "text": "string"
+              },
+              "default": "''",
+              "description": "The input's label. If you need to display HTML, use the `label` slot instead.",
+              "fieldName": "label",
+              "inheritedFrom": {
+                "name": "SlInput"
+              }
+            },
+            {
+              "name": "help-text",
+              "type": {
+                "text": "string"
+              },
+              "default": "''",
+              "description": "The input's help text. If you need to display HTML, use the `help-text` slot instead.",
+              "fieldName": "helpText",
+              "inheritedFrom": {
+                "name": "SlInput"
+              }
+            },
+            {
+              "name": "clearable",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "Adds a clear button when the input is not empty.",
+              "fieldName": "clearable",
+              "inheritedFrom": {
+                "name": "SlInput"
+              }
+            },
+            {
+              "name": "disabled",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "Disables the input.",
+              "fieldName": "disabled",
+              "inheritedFrom": {
+                "name": "SlInput"
+              }
+            },
+            {
+              "name": "placeholder",
+              "type": {
+                "text": "string"
+              },
+              "default": "''",
+              "description": "Placeholder text to show as a hint when the input is empty.",
+              "fieldName": "placeholder",
+              "inheritedFrom": {
+                "name": "SlInput"
+              }
+            },
+            {
+              "name": "readonly",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "Makes the input readonly.",
+              "fieldName": "readonly",
+              "inheritedFrom": {
+                "name": "SlInput"
+              }
+            },
+            {
+              "name": "password-toggle",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "Adds a button to toggle the password's visibility. Only applies to password types.",
+              "fieldName": "passwordToggle",
+              "inheritedFrom": {
+                "name": "SlInput"
+              }
+            },
+            {
+              "name": "password-visible",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "Determines whether or not the password is currently visible. Only applies to password input types.",
+              "fieldName": "passwordVisible",
+              "inheritedFrom": {
+                "name": "SlInput"
+              }
+            },
+            {
+              "name": "no-spin-buttons",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "Hides the browser's built-in increment/decrement spin buttons for number inputs.",
+              "fieldName": "noSpinButtons",
+              "inheritedFrom": {
+                "name": "SlInput"
+              }
+            },
+            {
+              "name": "form",
+              "type": {
+                "text": "string"
+              },
+              "default": "''",
+              "description": "By default, form controls are associated with the nearest containing `<form>` element. This attribute allows you\nto place the form control outside of a form and associate it with the form that has this `id`. The form must be in\nthe same document or shadow root for this to work.",
+              "fieldName": "form",
+              "inheritedFrom": {
+                "name": "SlInput"
+              }
+            },
+            {
+              "name": "required",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "Makes the input a required field.",
+              "fieldName": "required",
+              "inheritedFrom": {
+                "name": "SlInput"
+              }
+            },
+            {
+              "name": "pattern",
+              "type": {
+                "text": "string"
+              },
+              "description": "A regular expression pattern to validate input against.",
+              "fieldName": "pattern",
+              "inheritedFrom": {
+                "name": "SlInput"
+              }
+            },
+            {
+              "name": "minlength",
+              "type": {
+                "text": "number"
+              },
+              "description": "The minimum length of input that will be considered valid.",
+              "fieldName": "minlength",
+              "inheritedFrom": {
+                "name": "SlInput"
+              }
+            },
+            {
+              "name": "maxlength",
+              "type": {
+                "text": "number"
+              },
+              "description": "The maximum length of input that will be considered valid.",
+              "fieldName": "maxlength",
+              "inheritedFrom": {
+                "name": "SlInput"
+              }
+            },
+            {
+              "name": "min",
+              "type": {
+                "text": "number | string"
+              },
+              "description": "The input's minimum value. Only applies to date and number input types.",
+              "fieldName": "min",
+              "inheritedFrom": {
+                "name": "SlInput"
+              }
+            },
+            {
+              "name": "max",
+              "type": {
+                "text": "number | string"
+              },
+              "description": "The input's maximum value. Only applies to date and number input types.",
+              "fieldName": "max",
+              "inheritedFrom": {
+                "name": "SlInput"
+              }
+            },
+            {
+              "name": "step",
+              "type": {
+                "text": "number | 'any'"
+              },
+              "description": "Specifies the granularity that the value must adhere to, or the special value `any` which means no stepping is\nimplied, allowing any numeric value. Only applies to date and number input types.",
+              "fieldName": "step",
+              "inheritedFrom": {
+                "name": "SlInput"
+              }
+            },
+            {
+              "name": "autocapitalize",
+              "type": {
+                "text": "'off' | 'none' | 'on' | 'sentences' | 'words' | 'characters'"
+              },
+              "description": "Controls whether and how text input is automatically capitalized as it is entered by the user.",
+              "fieldName": "autocapitalize",
+              "inheritedFrom": {
+                "name": "SlInput"
+              }
+            },
+            {
+              "name": "autocorrect",
+              "type": {
+                "text": "'off' | 'on'"
+              },
+              "description": "Indicates whether the browser's autocorrect feature is on or off.",
+              "fieldName": "autocorrect",
+              "inheritedFrom": {
+                "name": "SlInput"
+              }
+            },
+            {
+              "name": "autocomplete",
+              "type": {
+                "text": "string"
+              },
+              "description": "Specifies what permission the browser has to provide assistance in filling out form field values. Refer to\n[this page on MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/autocomplete) for available values.",
+              "fieldName": "autocomplete",
+              "inheritedFrom": {
+                "name": "SlInput"
+              }
+            },
+            {
+              "name": "autofocus",
+              "type": {
+                "text": "boolean"
+              },
+              "description": "Indicates that the input should receive focus on page load.",
+              "fieldName": "autofocus",
+              "inheritedFrom": {
+                "name": "SlInput"
+              }
+            },
+            {
+              "name": "enterkeyhint",
+              "type": {
+                "text": "'enter' | 'done' | 'go' | 'next' | 'previous' | 'search' | 'send'"
+              },
+              "description": "Used to customize the label or icon of the Enter key on virtual keyboards.",
+              "fieldName": "enterkeyhint",
+              "inheritedFrom": {
+                "name": "SlInput"
+              }
+            },
+            {
+              "name": "spellcheck",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "true",
+              "description": "Enables spell checking on the input.",
+              "fieldName": "spellcheck",
+              "inheritedFrom": {
+                "name": "SlInput"
+              }
+            },
+            {
+              "name": "inputmode",
+              "type": {
+                "text": "'none' | 'text' | 'decimal' | 'numeric' | 'tel' | 'search' | 'email' | 'url'"
+              },
+              "description": "Tells the browser what type of data will be entered by the user, allowing it to display the appropriate virtual\nkeyboard on supportive devices.",
+              "fieldName": "inputmode",
+              "inheritedFrom": {
+                "name": "SlInput"
+              }
+            }
+          ],
+          "superclass": {
+            "name": "SlInput",
+            "package": "@shoelace-style/shoelace"
+          },
+          "tagName": "my-input",
+          "customElement": true,
+          "events": [
+            {
+              "description": "Emitted when the control loses focus.",
+              "name": "sl-blur",
+              "reactName": "onSlBlur",
+              "eventName": "SlBlurEvent",
+              "inheritedFrom": {
+                "name": "SlInput"
+              }
+            },
+            {
+              "description": "Emitted when an alteration to the control's value is committed by the user.",
+              "name": "sl-change",
+              "reactName": "onSlChange",
+              "eventName": "SlChangeEvent",
+              "inheritedFrom": {
+                "name": "SlInput"
+              }
+            },
+            {
+              "description": "Emitted when the clear button is activated.",
+              "name": "sl-clear",
+              "reactName": "onSlClear",
+              "eventName": "SlClearEvent",
+              "inheritedFrom": {
+                "name": "SlInput"
+              }
+            },
+            {
+              "description": "Emitted when the control gains focus.",
+              "name": "sl-focus",
+              "reactName": "onSlFocus",
+              "eventName": "SlFocusEvent",
+              "inheritedFrom": {
+                "name": "SlInput"
+              }
+            },
+            {
+              "description": "Emitted when the control receives input.",
+              "name": "sl-input",
+              "reactName": "onSlInput",
+              "eventName": "SlInputEvent",
+              "inheritedFrom": {
+                "name": "SlInput"
+              }
+            },
+            {
+              "description": "Emitted when the form control has been checked for validity and its constraints aren't satisfied.",
+              "name": "sl-invalid",
+              "reactName": "onSlInvalid",
+              "eventName": "SlInvalidEvent",
+              "inheritedFrom": {
+                "name": "SlInput"
+              }
+            }
+          ],
+          "slots": [
+            {
+              "description": "The input's label. Alternatively, you can use the `label` attribute.",
+              "name": "label",
+              "inheritedFrom": {
+                "name": "SlInput"
+              }
+            },
+            {
+              "description": "Used to prepend a presentational icon or similar element to the input.",
+              "name": "prefix",
+              "inheritedFrom": {
+                "name": "SlInput"
+              }
+            },
+            {
+              "description": "Used to append a presentational icon or similar element to the input.",
+              "name": "suffix",
+              "inheritedFrom": {
+                "name": "SlInput"
+              }
+            },
+            {
+              "description": "An icon to use in lieu of the default clear icon.",
+              "name": "clear-icon",
+              "inheritedFrom": {
+                "name": "SlInput"
+              }
+            },
+            {
+              "description": "An icon to use in lieu of the default show password icon.",
+              "name": "show-password-icon",
+              "inheritedFrom": {
+                "name": "SlInput"
+              }
+            },
+            {
+              "description": "An icon to use in lieu of the default hide password icon.",
+              "name": "hide-password-icon",
+              "inheritedFrom": {
+                "name": "SlInput"
+              }
+            },
+            {
+              "description": "Text that describes how to use the input. Alternatively, you can use the `help-text` attribute.",
+              "name": "help-text",
+              "inheritedFrom": {
+                "name": "SlInput"
+              }
+            }
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "MyInput",
+          "declaration": {
+            "name": "MyInput",
+            "module": "src/components/my-input.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "my-input",
+          "declaration": {
+            "name": "MyInput",
+            "module": "src/components/my-input.ts"
+          }
+        }
+      ]
+    }
+  ]
+}
